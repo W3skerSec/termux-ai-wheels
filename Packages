@@ -1,0 +1,84 @@
+Package: keras
+Version: 3.15.1
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 16857
+Depends: python, torch, optree, ml-dtypes
+Provides: python-keras, keras3
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Multi-backend Deep Learning Framework (Torch backend for Termux)
+Filename: keras_3.15.1_all.deb
+Size: 2495864
+MD5sum: 78eab91421862cfd46d44fa5ef7b3fc2
+SHA1: 3fb38c01346b75a8f35574f804186083fc601624
+SHA256: 1dada21a3fc7f0e0f602312a3357f09a3ee40c58ee7b19fddb6823aec9ba1d86
+
+Package: ml-dtypes
+Version: 0.6.0
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 1580
+Depends: python, libc++
+Provides: python-ml-dtypes
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Stand-alone implementation of machine learning types for Termux
+Filename: ml-dtypes_0.6.0_aarch64.deb
+Size: 184500
+MD5sum: c39725308faf0f8b098064dd741f37cb
+SHA1: fbfe935853bd4157f1d28f063dfc57f77054b16f
+SHA256: ce56388a457d2cb2dfc8469b713c266c74c23cea2de0f7c60a4623df95781780
+
+Package: optree
+Version: 0.20.0
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 3625
+Depends: python, libc++
+Provides: python-optree
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Optimized PyTree library for Termux
+Filename: optree_0.20.0_aarch64.deb
+Size: 707640
+MD5sum: d524ec0f601e6464c4b51eb45bd83024
+SHA1: 698598904c52088fb2de8b50d7576a96a5eed823
+SHA256: 041d1aca7bb791b2b87b8e98eae4c72823d5c7f6bb199a1a0c2912611e5e8dbd
+
+Package: scikit-learn
+Version: 1.6.1
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 55223
+Depends: python, libc++, python-scipy
+Provides: python-scikit-learn, sklearn, python-sklearn
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Machine Learning in Python for Termux (OpenMP Clang native)
+Filename: scikit-learn_1.6.1_aarch64.deb
+Size: 8205240
+MD5sum: b894f1c4aa2ad033ac567e902d7f1296
+SHA1: f99388504e36a20e17363f266b44f98bf24bf132
+SHA256: 2c8cd593473e2a15c6c7c14567b86f6db49f4184bf66d0cb0dd3b6c391aae1fa
+
+Package: torch
+Version: 2.11.0
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 282267
+Depends: python, libc++, abseil-cpp
+Provides: python-torch, pytorch, python-pytorch
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: PyTorch deep learning framework (Termux ARM64 patched with patchelf)
+Filename: torch_2.11.0_aarch64.deb
+Size: 47467260
+MD5sum: 6d54320bf02178f1bcdcd9152553a46a
+SHA1: ac9f4f6e871731b39881a120c209269959d4a605
+SHA256: 4a32e8ecedd77cbf574d06e5d71f8a923d53c548f76901b0bdfb10df59f48c51

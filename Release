@@ -1,0 +1,17 @@
+Origin: W3skerSec Termux AI Repository
+Label: W3skerSec AI
+Suite: stable
+Codename: termux-ai
+Date: Tue, 10 Nov 2026 18:29:56 UTC
+Architectures: aarch64 all
+Components: main
+Description: APT Repository with pre-compiled AI packages for Termux (torch, scikit-learn, keras)
+MD5Sum:
+ ee67e12736324301db8866d7a20715e2 2872 Packages
+ 41857ea326d62d258f8e37da6e9cc21f 1118 Packages.gz
+SHA1:
+ 40fc2d5fb02e95e9179d3da1d4e1478ad57feae9 2872 Packages
+ f93d79276e3489c7e908c9646cd106a4718e4031 1118 Packages.gz
+SHA256:
+ e3c7f79aa02af27b4ae7cbf4997018d65b51efb26ef06864a44ce419aa6ee2e6 2872 Packages
+ 076a020dc88274dd9b0fc9e195b629d44b6180ed511d9f2111e4aab91fe92418 1118 Packages.gz
