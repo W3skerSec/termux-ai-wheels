@@ -1,8 +1,8 @@
-Origin: Repositorio APT de IA W3skerSec
+Origin: W3skerSec Termux AI Repository
 Label: W3skerSec AI
 Suite: stable
 Codename: termux-ai
-Date: Tue, 10 Nov 2026 18:38:37 UTC
+Date: Tue, 10 Nov 2026 18:39:17 UTC
 Architectures: aarch64 all
 Components: main
 Description: Repositorio APT com pacotes de Inteligencia Artificial pre-compilados para Termux (torch, scikit-learn, keras, optree, ml-dtypes)
