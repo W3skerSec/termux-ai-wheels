@@ -202,6 +202,20 @@ MD5sum: 6d54320bf02178f1bcdcd9152553a46a
 SHA1: ac9f4f6e871731b39881a120c209269959d4a605
 SHA256: 4a32e8ecedd77cbf574d06e5d71f8a923d53c548f76901b0bdfb10df59f48c51
 
+Package: torchaudio
+Version: 2.11.0
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python (>= 3.14), torch (>= 2.11.0), sox, ffmpeg
+Section: python
+Priority: optional
+Description: Manipulacao, processamento e modelos de audio para PyTorch no Termux
+Filename: torchaudio_2.11.0_aarch64.deb
+Size: 479252
+MD5sum: 8f334af299fc22ccd903d3ef67a3d191
+SHA1: 97915542d890058532d0d70c13472d2c8e163039
+SHA256: 469c226aa775a3f349407dd7d5250d363110b8cc7c226d1c7fbbeb3e453e4199
+
 Package: torchvision
 Version: 0.26.0
 Architecture: aarch64
