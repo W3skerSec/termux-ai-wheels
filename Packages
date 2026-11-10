@@ -247,3 +247,18 @@ Size: 1097464
 MD5sum: 8128bea9927205a6b077efa712e648e4
 SHA1: c0e335a6bad109f683306215e14a3a811d67574c
 SHA256: 55e801df86f934d46979252a84067496a0e5a4e70aa3fb777c193be65332f7f4
+
+Package: ultralytics
+Version: 8.4.202
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python (>= 3.14), torch (>= 2.11.0), torchvision (>= 0.26.0), opencv-python, python-numpy (>= 2.4.4), matplotlib, python-pillow, python-psutil, python-requests
+Section: python
+Priority: optional
+Homepage: https://ultralytics.com
+Description: Ultralytics YOLO (v8/v11) para deteccao, segmentacao e classificacao no Termux
+Filename: ultralytics_8.4.202_all.deb
+Size: 1684156
+MD5sum: 3e4b8508d514aae4dc1800843c6cdfd4
+SHA1: dbb832b3ec100288f4b8e20cbf59b7477d11ebad
+SHA256: 28d0b43c74da8d921793666f513b466c23d5d62064d39127e0f8e41589b54d41
