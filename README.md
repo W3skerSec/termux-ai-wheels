@@ -62,6 +62,7 @@ pkg update
 |:---|:---:|:---:|:---|:---|
 | 🔥 **PyTorch** | `2.11.0` | `aarch64` | `pkg install torch` | Binários com `patchelf` — zero symlinks frágeis |
 | 👁️ **TorchVision** | `0.26.0` | `aarch64` | `pkg install torchvision` | Modelos de visão + C++ ops (`_C.so` e `image.so`) |
+| 🔊 **TorchAudio** | `2.11.0` | `aarch64` | `pkg install torchaudio` | Processamento de áudio, forced align & RNNT C++ ops |
 | 🧠 **Keras 3** | `3.15.1` | `all` | `pkg install keras` | Multi-backend, opera sobre PyTorch |
 | 🤖 **Scikit-Learn** | `1.6.1` | `aarch64` | `pkg install scikit-learn` | Compilado com Clang + OpenMP 5.1 nativo |
 | 🌳 **Optree** | `0.20.0` | `aarch64` | `pkg install optree` | Dep. do Keras 3, C++17 |
@@ -83,9 +84,14 @@ pkg update
 pkg install torch torchvision
 ```
 
+### 🔊 Áudio & Fala (TorchAudio)
+```bash
+pkg install torch torchaudio
+```
+
 ### 🧠 Stack Completo de Deep Learning
 ```bash
-pkg install keras torch torchvision scikit-learn pandas seaborn openpyxl
+pkg install keras torch torchvision torchaudio scikit-learn pandas seaborn openpyxl
 ```
 
 ### 🔥 Só PyTorch
@@ -231,11 +237,12 @@ termux-ai-wheels/
 
 - [x] PyTorch 2.11.0 (aarch64)
 - [x] **TorchVision 0.26.0** (aarch64 + C++ ops)
+- [x] **TorchAudio 2.11.0** (aarch64 + C++ ops)
 - [x] Keras 3 + dependências
 - [x] Scikit-Learn 1.6.1
 - [x] Pandas 3.0.5
 - [x] Seaborn, OpenPyXL, Joblib
-- [ ] TorchAudio
+- [ ] ONNX Runtime (ARM64)
 - [ ] ONNX Runtime (ARM64)
 - [ ] LLaMA.cpp Python bindings
 
