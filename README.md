@@ -1,55 +1,63 @@
-# 🚀 Termux AI & Data Science Wheels (`aarch64` / Android)
+# 🚀 Termux AI APT Repository (`aarch64` / Android)
 
-Repositório de pacotes Python pré-compilados e otimizados para **Android / Termux (aarch64)** rodando **Python 3.14+**.
+Repositório **APT nativo** para Termux com pacotes de Inteligência Artificial pré-compilados e otimizados para arquitetura ARM64.
 
-Essas bibliotecas não estão disponíveis no repositório padrão do Termux nem possuem wheels oficiais no PyPI para Android aarch64. Todas foram compiladas nativamente via **LLVM/Clang** com suporte a **OpenMP** e corrigidas via **patchelf** para total compatibilidade com o sistema Termux.
-
----
-
-## 📦 Pacotes Inclusos no Release v1.0.0
-
-| Pacote | Versão | Arquitetura | Detalhes |
-| :--- | :--- | :--- | :--- |
-| **PyTorch** (`torch`) | `2.11.0` | `android_aarch64` | Corrigido com `patchelf` (`libabsl_base_cpu_detect.so`) |
-| **Scikit-Learn** | `1.6.1` | `android_24_arm64_v8a` | Compilação nativa com OpenMP 5.1 via Clang |
-| **ml_dtypes** | `0.6.0` | `android_24_arm64_v8a` | Compilado com Eigen / C++17 |
-| **optree** | `0.20.0` | `android_24_arm64_v8a` | Suporte a estruturas de árvore para Keras/JAX |
-| **Keras 3** | `3.15.1` | Universal (`py3-none-any`) | Configurado para rodar com backend **PyTorch** |
-
----
-
-## ⚡ Instalação Rápida (1 Comando)
-
-Para instalar todo o ambiente (PyTorch + Scikit-Learn + Keras 3 + Pandas + Matplotlib) em qualquer Termux:
+Permite instalar bibliotecas como **Keras 3**, **PyTorch**, **Scikit-Learn** e dependências diretamente com o comando padrão:
 
 ```bash
-curl -sL https://raw.githubusercontent.com/W3skerSec/termux-ai-wheels/main/install.sh | bash
+pkg install keras
 ```
 
 ---
 
-## 🛠️ Instalação Manual das Wheels
+## ⚡ Ativação do Repositório (Execute uma única vez)
 
-Caso queira baixar ou instalar apenas um pacote específico diretamente dos Releases:
+Para adicionar o repositório ao seu Termux:
 
 ```bash
-# PyTorch 2.11.0
-pip install https://github.com/W3skerSec/termux-ai-wheels/releases/download/v1.0.0/torch-2.11.0-cp314-cp314-android_aarch64.whl
+curl -sL https://raw.githubusercontent.com/W3skerSec/termux-ai-wheels/main/setup-repo.sh | bash
+```
 
-# Scikit-Learn 1.6.1
-pip install https://github.com/W3skerSec/termux-ai-wheels/releases/download/v1.0.0/scikit_learn-1.6.1-cp314-cp314-android_24_arm64_v8a.whl
-
-# Dependências do Keras 3
-pip install https://github.com/W3skerSec/termux-ai-wheels/releases/download/v1.0.0/optree-0.20.0-cp314-cp314-android_24_arm64_v8a.whl
-pip install https://github.com/W3skerSec/termux-ai-wheels/releases/download/v1.0.0/ml_dtypes-0.6.0-cp314-cp314-android_24_arm64_v8a.whl
-pip install --no-deps keras
+*Ou manualmente:*
+```bash
+echo "deb [trusted=yes] https://raw.githubusercontent.com/W3skerSec/termux-ai-wheels/gh-pages/ ./" > $PREFIX/etc/apt/sources.list.d/w3skersec.list
+pkg update
 ```
 
 ---
 
-## 🧪 Como usar Keras 3 com backend PyTorch
+## 📦 Como Instalar Pacotes no Dia a Dia
 
-Basta definir a variável de ambiente `KERAS_BACKEND=torch`:
+Uma vez ativado o repositório, basta usar o `pkg` ou `apt` normalmente:
+
+```bash
+# Instala o Keras 3 + PyTorch + ml-dtypes + optree automaticamente:
+pkg install keras
+
+# Instala o PyTorch isoladamente:
+pkg install torch
+
+# Instala o Scikit-Learn:
+pkg install scikit-learn
+```
+
+O gerenciador de pacotes do Termux resolverá automaticamente todas as dependências nativas (`libc++`, `python`, `abseil-cpp`) sem precisar compilar nada e sem precisar copiar URLs longas!
+
+---
+
+## 🛠️ Pacotes Disponíveis no Repositório
+
+| Pacote | Comando APT | Versão | Arquitetura | Detalhes |
+| :--- | :--- | :--- | :--- | :--- |
+| **Keras 3** | `pkg install keras` | `3.15.1` | `all` | Configurado para backend PyTorch nativo |
+| **PyTorch** | `pkg install torch` | `2.11.0` | `aarch64` | Patcheado com `patchelf` (`libabsl_base_cpu_detect`) |
+| **Scikit-Learn** | `pkg install scikit-learn` | `1.6.1` | `aarch64` | Compilação com suporte a OpenMP 5.1 via Clang |
+| **Optree** | `pkg install optree` | `0.20.0` | `aarch64` | Otimização de PyTree para Keras/JAX |
+| **ml-dtypes** | `pkg install ml-dtypes` | `0.6.0` | `aarch64` | Tipos numéricos compilados com C++17 / Eigen |
+
+---
+
+## 🧪 Exemplo de Uso do Keras 3 com PyTorch
 
 ```python
 import os
@@ -58,7 +66,6 @@ os.environ["KERAS_BACKEND"] = "torch"
 import keras
 from keras import layers, models
 
-# Modelo Sequential clássico
 model = models.Sequential([
     layers.Input(shape=(1,)),
     layers.Dense(64, activation="relu"),
@@ -72,7 +79,8 @@ print(f"Keras {keras.__version__} rodando com backend {keras.backend.backend()} 
 
 ---
 
-## 🛡️ Sem Symlinks, Sem Gambiarras
-- Não requer symlinks no `$PREFIX/lib` que quebram com `pkg upgrade`.
-- Usa a toolchain LLVM/Clang nativa do Termux.
-- Totalmente compatível com as atualizações de sistema.
+## 🛡️ Vantagens do Servidor APT Nativo
+- **Zero URL longa:** Instalação idêntica aos pacotes oficiais do Termux (`pkg install <pacote>`).
+- **Resolução automática de dependências:** Ao instalar `keras`, o APT puxa `torch`, `optree` e `ml-dtypes` automaticamente.
+- **Gerenciado pelo Dpkg:** Desinstalação limpa com `pkg uninstall keras` ou `apt remove torch`.
+- **Hospedagem 100% gratuita no GitHub:** Alta disponibilidade e velocidade através do CDN global.
