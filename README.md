@@ -182,14 +182,14 @@ print(df.to_string(index=False))
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                   Como os .deb são feitos                   │
+│                   Como os .deb são feitos                              │
 ├─────────────────────────────────────────────────────────────┤
-│  1. Compilação nativa no próprio Android (Termux/Clang)     │
-│  2. patchelf corrige DT_NEEDED em binários ELF nativos      │
-│  3. Indexação APT-padrão Debian (Packages.gz + Release)     │
-│  4. .dist-info embutido → pip reconhece tudo normalmente    │
-│  5. Desinstalação limpa via pkg uninstall / apt remove      │
-└─────────────────────────────────────────────────────────────┘
+  1. Compilação nativa no próprio Android (Termux/Clang)                
+  2. patchelf corrige DT_NEEDED em binários ELF nativos                 
+  3. Indexação APT-padrão Debian (Packages.gz + Release)                
+  4. .dist-info embutido → pip reconhece tudo normalmente              
+  5. Desinstalação limpa via pkg uninstall / apt remove                 
+
 ```
 
 | ✅ Feito certo | ❌ Outros projetos |
