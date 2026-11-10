@@ -13,7 +13,7 @@ REPO_LIST="$PREFIX/etc/apt/sources.list.d/w3skersec.list"
 echo "deb [trusted=yes] https://raw.githubusercontent.com/W3skerSec/termux-ai-wheels/gh-pages/ ./" > "$REPO_LIST"
 
 echo "Atualizando listas do APT..."
-pkg update
+apt-get update --allow-releaseinfo-change
 
 echo ""
 echo "=================================================="
