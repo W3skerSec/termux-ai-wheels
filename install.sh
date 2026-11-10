@@ -50,7 +50,7 @@ ok "Repositório APT configurado."
 # ── [3/4] Instalar pacotes via APT ────────────────────────────────────────────
 step "3/4" "Instalando pacotes de IA e Data Science..."
 
-PACKAGES=(numpy torch torchvision torchaudio keras scikit-learn pandas seaborn openpyxl joblib threadpoolctl absl-py namex)
+PACKAGES=(numpy torch torchvision torchaudio ultralytics keras scikit-learn pandas seaborn openpyxl joblib threadpoolctl absl-py namex)
 
 for pkg_name in "${PACKAGES[@]}"; do
   info "Instalando ${pkg_name}..."

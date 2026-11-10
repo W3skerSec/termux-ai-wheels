@@ -60,6 +60,7 @@ pkg update
 
 | Pacote | Versão | Arch | Instalar | Notas |
 |:---|:---:|:---:|:---|:---|
+| 🎯 **Ultralytics YOLO** | `8.4.202` | `all` | `pkg install ultralytics` | YOLOv8/v11 com patch nativo de suporte ao Android/Termux |
 | 🔢 **NumPy** | `2.4.4` | `aarch64` | `pkg install numpy` | Versão estável (Golden ABI) 100% alinhada com Pandas 3.0.5 e PyTorch |
 | 🔥 **PyTorch** | `2.11.0` | `aarch64` | `pkg install torch` | Binários com `patchelf` — zero symlinks frágeis |
 | 👁️ **TorchVision** | `0.26.0` | `aarch64` | `pkg install torchvision` | Modelos de visão + C++ ops (`_C.so` e `image.so`) |
@@ -83,6 +84,11 @@ pkg update
 ### 👁️ Visão Computacional (TorchVision)
 ```bash
 pkg install torch torchvision
+```
+
+### 🎯 Visão Computacional Avançada & Detecção de Objetos (YOLO)
+```bash
+pkg install torch torchvision ultralytics opencv-python
 ```
 
 ### 🔊 Áudio & Fala (TorchAudio)
@@ -236,6 +242,7 @@ termux-ai-wheels/
 
 ## 🛣️ Roadmap
 
+- [x] **Ultralytics YOLO** (v8/v11 adaptado para Android)
 - [x] **NumPy 2.4.4** (golden ABI preservada)
 - [x] PyTorch 2.11.0 (aarch64)
 - [x] **TorchVision 0.26.0** (aarch64 + C++ ops)
