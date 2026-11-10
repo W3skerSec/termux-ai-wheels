@@ -15,6 +15,66 @@ MD5sum: 3db31070724e1af5f6f1ce747b967076
 SHA1: 2e4073a9d6bba049fe8487c097ce984d0af17fe3
 SHA256: 16838eb1b11063680979733d4225ed32e594b380d2c7bc853816a749c1de6586
 
+Package: certifi
+Version: 2025.6.15
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python
+Provides: python-certifi (= 2025.6.15)
+Section: python
+Priority: optional
+Description: Python package for providing Mozilla CA Bundle
+Filename: certifi_2025.6.15_all.deb
+Size: 146556
+MD5sum: 3c6b0c870854b4c4ba8175758e9d2de5
+SHA1: 07495729b7703f7da2acb45da621c4a724cf39ed
+SHA256: edd6627499bd3ad2e54a51df1b919ab2cee594d749ef371a4498a99b66b517c3
+
+Package: charset-normalizer
+Version: 3.4.2
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python
+Provides: python-charset-normalizer (= 3.4.2)
+Section: python
+Priority: optional
+Description: The Real First Universal Charset Detector
+Filename: charset-normalizer_3.4.2_all.deb
+Size: 84088
+MD5sum: bd00bea6bb1e07fdeca5fa8ed1584d00
+SHA1: ceb69ea86da4980e8b9c4ee32854a53cef6aa551
+SHA256: 52a0d0363d327811f4f2d1b51b8f87967b16d3710b2c4a4172a9a966a9f19e73
+
+Package: fonttools
+Version: 4.68.0
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python
+Provides: python-fonttools (= 4.68.0)
+Section: python
+Priority: optional
+Description: Tools for manipulating fonts
+Filename: fonttools_4.68.0_all.deb
+Size: 860852
+MD5sum: 4059fd0d3a00d04c8419bfa26b6b3d56
+SHA1: f5d9737efc9c51289a9f691bf65b802ec347a81a
+SHA256: c95cf988973a8950bcfb2c49457edbed64c12ee9d08ab672e94104259d6a4d3f
+
+Package: idna
+Version: 3.10
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python
+Provides: python-idna (= 3.10)
+Section: python
+Priority: optional
+Description: Internationalized Domain Names in Applications (IDNA)
+Filename: idna_3.10_all.deb
+Size: 55556
+MD5sum: 602c33ab6d8070b7701691513b1324eb
+SHA1: 4be7b9b33c25cc690e3febc1b5bfe8ac0f21dad0
+SHA256: f1f0dc2635b4dce5d096ab9c1d0a0ee221f3753ff02f7764abe8e6edb4657764
+
 Package: joblib
 Version: 1.6.0
 Architecture: all
@@ -48,6 +108,21 @@ Size: 2495864
 MD5sum: 78eab91421862cfd46d44fa5ef7b3fc2
 SHA1: 3fb38c01346b75a8f35574f804186083fc601624
 SHA256: 1dada21a3fc7f0e0f602312a3357f09a3ee40c58ee7b19fddb6823aec9ba1d86
+
+Package: matplotlib
+Version: 3.11.2-2
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: freetype, libc++, libraqm, patchelf, qhull, ninja, python, python-contourpy, python-kiwisolver, python-numpy, python-pillow, python-pip
+Provides: matplotlib (= 3.11.2-2)
+Section: python
+Priority: optional
+Description: A comprehensive library for creating static, animated, and interactive visualizations in Python (Preservado e testado no Termux AI Wheels)
+Filename: matplotlib_3.11.2-2_aarch64.deb
+Size: 4919676
+MD5sum: 4f5a01210f2ca5aaff53db211b38e511
+SHA1: 7f414eb9157fc8e3cfff47e6f88c285f33b2513a
+SHA256: 2941478988b4db38cec64eb31730da94fc73ac8769346ac4dee216be8d71f7e5
 
 Package: ml-dtypes
 Version: 0.6.0
@@ -101,6 +176,36 @@ MD5sum: cf94bd6564997cd880269dd9eec033f6
 SHA1: a33ebd45a2a74d5b327c6a638134ca4a25e2c466
 SHA256: 727c913362e97c026ae339be92ac5176801aa9f97bf43e521e79e8a3b06a98af
 
+Package: opencv-python
+Version: 5.1.0
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python, python-numpy, opencv (= 5.1.0)
+Provides: opencv-python (= 5.1.0)
+Section: python
+Priority: optional
+Description: Python bindings for OpenCV (Preservado e testado no Termux AI Wheels)
+Filename: opencv-python_5.1.0_aarch64.deb
+Size: 1735356
+MD5sum: 4815057251ef018ee1102ab869c115d3
+SHA1: cf3eb81290f10dd30e79b771c55c9d4612be8549
+SHA256: 1df75315dad5922a0b54faae90f9cb408625bdfdd030dc5e78514408810bae65
+
+Package: opencv
+Version: 5.1.0
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: abseil-cpp, ffmpeg, libavif, libc++, libjpeg-turbo, libopenblas, libpng, libprotobuf, libtiff, libwebp, openjpeg, openjpeg-tools, qt6-qtbase, qt6-qt5compat, zlib
+Provides: opencv (= 5.1.0)
+Section: python
+Priority: optional
+Description: Open Source Computer Vision Library (Preservado e testado no Termux AI Wheels)
+Filename: opencv_5.1.0_aarch64.deb
+Size: 16168576
+MD5sum: 8a170b656af8c9b743b388235fc53170
+SHA1: 7392b508d2ef8c23c73538d13b87da4fd562f9db
+SHA256: aac7d7588affdac476bda68b4706bba55d5b7c254c9af524aeac890dfb58a98b
+
 Package: openpyxl
 Version: 3.1.5
 Architecture: all
@@ -135,6 +240,21 @@ MD5sum: d524ec0f601e6464c4b51eb45bd83024
 SHA1: 698598904c52088fb2de8b50d7576a96a5eed823
 SHA256: 041d1aca7bb791b2b87b8e98eae4c72823d5c7f6bb199a1a0c2912611e5e8dbd
 
+Package: packaging
+Version: 26.3
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python
+Provides: python-packaging (= 26.3)
+Section: python
+Priority: optional
+Description: Core utilities for Python packages
+Filename: packaging_26.3_all.deb
+Size: 188188
+MD5sum: 5f83de10003a146878c5e732e40fae7c
+SHA1: 167ec0c4586d68c14e92de88f76b9c6ba29efe2e
+SHA256: b608730eb1c8311f4f8ec84d9981539d7bc42518a74824617eb171f44954ad80
+
 Package: pandas
 Version: 3.0.5
 Architecture: aarch64
@@ -151,6 +271,126 @@ Size: 13779512
 MD5sum: 5dea713fc59196e4abb542cf681534dd
 SHA1: 641f13a3b795594fc3ae1fbda502f6057ce67d5b
 SHA256: f55d942cc3d5fa77f6811c52a7430734214882281c2c37e4ca188bc12002cdd3
+
+Package: pyparsing
+Version: 3.3.3
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python
+Provides: python-pyparsing (= 3.3.3)
+Section: python
+Priority: optional
+Description: Python parsing module
+Filename: pyparsing_3.3.3_all.deb
+Size: 236980
+MD5sum: 45facaf0900475bc671d13204037eb7a
+SHA1: e272e5fc51fe3023b8b9aa426def557d4576c7d4
+SHA256: 1529796de12562be3d2006c37c3277f9439404e04fda89e488fd9837df4376e3
+
+Package: python-contourpy
+Version: 1.4.0-1
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python, python-numpy, python-pip
+Provides: python-contourpy (= 1.4.0-1)
+Section: python
+Priority: optional
+Description: Python library for calculating contours in 2D quadrilateral grids (Preservado e testado no Termux AI Wheels)
+Filename: python-contourpy_1.4.0-1_aarch64.deb
+Size: 168216
+MD5sum: a7849b7bd5a58f58bec9485c91856dbc
+SHA1: 935b680ddd5b46c6ca0049275e518f1949d6edf3
+SHA256: c8f887b50cd69b71a3323b52269b7eb5c7a8e5afb817e4ecde093a838b21d98a
+
+Package: python-dateutil
+Version: 2.9.0
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python
+Provides: python-python-dateutil (= 2.9.0)
+Section: python
+Priority: optional
+Description: Extensions to the standard Python datetime module
+Filename: python-dateutil_2.9.0_all.deb
+Size: 295712
+MD5sum: d5ec751cd4398e6fa004a73791422eb5
+SHA1: e4dea985701b4772b7262c462eab813090f04371
+SHA256: 9f479ff09df3b440fa0f821580a8219c8e0d0fc69b0aa15815678398acf8c720
+
+Package: python-kiwisolver
+Version: 1.5.1
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: libc++, python
+Provides: python-kiwisolver (= 1.5.1)
+Section: python
+Priority: optional
+Description: An efficient C++ implementation of the Cassowary constraint solving algorithm (Preservado e testado no Termux AI Wheels)
+Filename: python-kiwisolver_1.5.1_aarch64.deb
+Size: 57484
+MD5sum: bb5314ee5dff9e301f324fd4493f0eff
+SHA1: 979465afe1cc73c4b6b70cb810f830f0cd340def
+SHA256: db621dad0ac7ec26af3adf1c3720508c86bf5258b9d12365b4f124fd370be533
+
+Package: python-pillow
+Version: 13.0.0
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: freetype, libavif, libimagequant, libjpeg-turbo, libraqm, libtiff, libwebp, libxcb, littlecms, openjpeg, python, python-pip, zlib
+Provides: python-pillow (= 13.0.0)
+Section: python
+Priority: optional
+Description: Python Imaging Library (Preservado e testado no Termux AI Wheels)
+Filename: python-pillow_13.0.0_aarch64.deb
+Size: 410412
+MD5sum: b8a5918dd9a2f5a86501a50456abd0b6
+SHA1: 701a61f4f20af67252208a39833e151d5ed8b274
+SHA256: 91f5acab3f36e5bc88653180d6973a59f004659555fe0fb50b09a9c7766b3b8c
+
+Package: python-psutil
+Version: 7.2.2-2
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python, python-pip
+Provides: python-psutil (= 7.2.2-2)
+Section: python
+Priority: optional
+Description: Cross-platform process and system utilities module for Python (Preservado e testado no Termux AI Wheels)
+Filename: python-psutil_7.2.2-2_aarch64.deb
+Size: 82528
+MD5sum: 44ba1d5826188cabb357fccba032df9a
+SHA1: 7978a86097c27d65cbefd752371eb3ddbaeeb6ae
+SHA256: 02fbc2a1165472c588e81dec0c2604f13b427d46933268c4deb00a3843b881a1
+
+Package: python-scipy
+Version: 1:1.18.0-1
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: libandroid-complex-math, libc++ (>= 29), libopenblas, python, python-numpy, python-pip
+Provides: python-scipy (= 1:1.18.0-1)
+Section: python
+Priority: optional
+Description: Fundamental algorithms for scientific computing in Python (Preservado e testado no Termux AI Wheels)
+Filename: python-scipy_1_1.18.0-1_aarch64.deb
+Size: 16940312
+MD5sum: 6a5872f5d0ebb4821d8582c445f4921d
+SHA1: c77e578f6bf607834fe07bd8280238718baf9531
+SHA256: c7f89dce30f7160323639437b15593022e6203c6fd8424b205b6c3b44232ae18
+
+Package: requests
+Version: 2.32.4
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python, python-urllib3, python-certifi, python-charset-normalizer, python-idna
+Provides: python-requests (= 2.32.4)
+Section: python
+Priority: optional
+Description: Python HTTP for Humans
+Filename: requests_2.32.4_all.deb
+Size: 118024
+MD5sum: 943242fa7b3ee39977471f0310cbb173
+SHA1: a280188a6c53e28935cd5c992160489235141abe
+SHA256: e4700c4b528946c48cf6a9e05142e703aa7b24284c4089a7f685d70dfb417e23
 
 Package: scikit-learn
 Version: 1.6.1
@@ -262,3 +502,18 @@ Size: 1684156
 MD5sum: 3e4b8508d514aae4dc1800843c6cdfd4
 SHA1: dbb832b3ec100288f4b8e20cbf59b7477d11ebad
 SHA256: 28d0b43c74da8d921793666f513b466c23d5d62064d39127e0f8e41589b54d41
+
+Package: urllib3
+Version: 2.5.0
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python
+Provides: python-urllib3 (= 2.5.0)
+Section: python
+Priority: optional
+Description: HTTP library with thread-safe connection pooling
+Filename: urllib3_2.5.0_all.deb
+Size: 199244
+MD5sum: 81a3e5586e8c5fdb74783b698128a116
+SHA1: 7bd49f568477751037b427440dd79c335510392f
+SHA256: fc6a5727f63fc3172c7b29cfea074f80a75c37180e51a50636e081eadc4ea88c
