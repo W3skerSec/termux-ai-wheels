@@ -1,166 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Repositório APT de Inteligência Artificial para Termux - W3skerSec</title>
-  <style>
-    :root {
-      --bg: #0d1117;
-      --card-bg: #161b22;
-      --border: #30363d;
-      --text: #c9d1d9;
-      --text-muted: #8b949e;
-      --primary: #58a6ff;
-      --accent: #238636;
-      --code-bg: #0b0e14;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px 20px;
-      line-height: 1.6;
-      background: var(--bg);
-      color: var(--text);
-    }
-    h1, h2, h3 { color: var(--primary); }
-    h1 { border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 20px; }
-    p, li { font-size: 15px; }
-    pre {
-      background: var(--code-bg);
-      padding: 14px 18px;
-      border-radius: 8px;
-      overflow-x: auto;
-      border: 1px solid var(--border);
-      color: #7ee787;
-      font-size: 14px;
-      font-family: monospace;
-    }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 24px;
-    }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { list-style: none; padding-left: 0; }
-    li { margin: 10px 0; }
-    .badge {
-      background: var(--accent);
-      color: white;
-      padding: 3px 9px;
-      border-radius: 12px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-left: 8px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
-    }
-    th, td {
-      border: 1px solid var(--border);
-      padding: 10px 14px;
-      text-align: left;
-    }
-    th {
-      background: var(--card-bg);
-      color: var(--primary);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3skerSec Termux AI Repository</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; background: #0d1117; color: #c9d1d9; padding: 20px; }
+        h1 { color: #58a6ff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #30363d; padding: 10px; text-align: left; }
+        th { background: #161b22; color: #58a6ff; }
+        tr:nth-child(even) { background: #161b22; }
+        a { color: #58a6ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: #21262d; padding: 2px 5px; border-radius: 4px; }
+        .badge { background: #238636; color: #fff; padding: 2px 6px; border-radius: 10px; font-size: 0.8em; }
+    </style>
 </head>
 <body>
-  <h1>🚀 Repositório APT de Inteligência Artificial para Termux</h1>
-  <p>
-    Servidor e repositório de pacotes <strong>APT nativos</strong> com bibliotecas de <strong>Inteligência Artificial</strong> e <strong>Ciência de Dados</strong> pré-compiladas para <strong>Termux</strong> na arquitetura <strong>ARM64 (aarch64)</strong> com <strong>Python 3.14+</strong>.
-  </p>
-
-  <div class="card">
-    <h2>⚡ Ativação Rápida (Executar apenas 1 vez)</h2>
-    <p>Adicione o repositório à lista de fontes do seu Termux:</p>
-    <pre>echo "deb [trusted=yes] https://raw.githubusercontent.com/W3skerSec/termux-ai-wheels/gh-pages/ ./" > $PREFIX/etc/apt/sources.list.d/w3skersec.list && pkg update</pre>
-  </div>
-
-  <div class="card">
-    <h2>📦 Instalação Direta de Pacotes</h2>
-    <p>Instale os pacotes de IA diretamente pelo gerenciador oficial do Termux:</p>
-    <pre># Instalar Keras 3 (configurado para backend PyTorch nativo)
-pkg install keras
-
-# Instalar PyTorch isoladamente
-pkg install torch
-
-# Instalar Scikit-Learn
-pkg install scikit-learn</pre>
-  </div>
-
-  <div class="card">
-    <h2>📋 Pacotes Disponíveis no Repositório</h2>
+    <h1>🚀 W3skerSec Termux AI APT Repository</h1>
+    <p>Pacotes pré-compilados de Inteligência Artificial, Visão Computacional, Áudio e Ciência de Dados para Termux (Android ARM64).</p>
+    <pre><code>pkg install -y wget gnupg
+wget -qO- https://w3skersec.github.io/termux-ai-wheels/setup-repo.sh | bash
+pkg update
+pkg install -y whisper-cpp torch torchvision torchaudio ultralytics opencv-python</code></pre>
     <table>
-      <thead>
-        <tr>
-          <th>Pacote</th>
-          <th>Versão</th>
-          <th>Arquitetura</th>
-          <th>Tamanho</th>
-          <th>Download Direto</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>torch</strong></td>
-          <td>2.11.0</td>
-          <td>aarch64</td>
-          <td>45.3 MB</td>
-          <td><a href="torch_2.11.0_aarch64.deb">torch_2.11.0_aarch64.deb</a></td>
-        </tr>
-        <tr>
-          <td><strong>scikit-learn</strong></td>
-          <td>1.6.1</td>
-          <td>aarch64</td>
-          <td>7.8 MB</td>
-          <td><a href="scikit-learn_1.6.1_aarch64.deb">scikit-learn_1.6.1_aarch64.deb</a></td>
-        </tr>
-        <tr>
-          <td><strong>keras</strong></td>
-          <td>3.15.1</td>
-          <td>all</td>
-          <td>2.4 MB</td>
-          <td><a href="keras_3.15.1_all.deb">keras_3.15.1_all.deb</a></td>
-        </tr>
-        <tr>
-          <td><strong>optree</strong></td>
-          <td>0.20.0</td>
-          <td>aarch64</td>
-          <td>692 KB</td>
-          <td><a href="optree_0.20.0_aarch64.deb">optree_0.20.0_aarch64.deb</a></td>
-        </tr>
-        <tr>
-          <td><strong>ml-dtypes</strong></td>
-          <td>0.6.0</td>
-          <td>aarch64</td>
-          <td>181 KB</td>
-          <td><a href="ml-dtypes_0.6.0_aarch64.deb">ml-dtypes_0.6.0_aarch64.deb</a></td>
-        </tr>
-      </tbody>
+        <thead>
+            <tr>
+                <th>Pacote</th>
+                <th>Versão</th>
+                <th>Arquitetura</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+    <td><strong><a href="absl-py_2.5.1_all.deb">absl-py</a></strong></td>
+    <td><code>2.5.1</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Biblioteca Python de suporte do Google (utilizada pelo Keras 3)</td>
+</tr><tr>
+    <td><strong><a href="certifi_2025.6.15_all.deb">certifi</a></strong></td>
+    <td><code>2025.6.15</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Python package for providing Mozilla CA Bundle</td>
+</tr><tr>
+    <td><strong><a href="charset-normalizer_3.4.2_all.deb">charset-normalizer</a></strong></td>
+    <td><code>3.4.2</code></td>
+    <td><span class="badge">all</span></td>
+    <td>The Real First Universal Charset Detector</td>
+</tr><tr>
+    <td><strong><a href="fonttools_4.68.0_all.deb">fonttools</a></strong></td>
+    <td><code>4.68.0</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Tools for manipulating fonts</td>
+</tr><tr>
+    <td><strong><a href="idna_3.10_all.deb">idna</a></strong></td>
+    <td><code>3.10</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Internationalized Domain Names in Applications (IDNA)</td>
+</tr><tr>
+    <td><strong><a href="joblib_1.6.0_all.deb">joblib</a></strong></td>
+    <td><code>1.6.0</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Paralelismo leve e cache de funcoes Python para Termux</td>
+</tr><tr>
+    <td><strong><a href="keras_3.15.1_all.deb">keras</a></strong></td>
+    <td><code>3.15.1</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Multi-backend Deep Learning Framework (Torch backend for Termux)</td>
+</tr><tr>
+    <td><strong><a href="matplotlib_3.11.2-2_aarch64.deb">matplotlib</a></strong></td>
+    <td><code>3.11.2-2</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>A comprehensive library for creating static, animated, and interactive visualizations in Python (Preservado e testado no Termux AI Wheels)</td>
+</tr><tr>
+    <td><strong><a href="ml-dtypes_0.6.0_aarch64.deb">ml-dtypes</a></strong></td>
+    <td><code>0.6.0</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Stand-alone implementation of machine learning types for Termux</td>
+</tr><tr>
+    <td><strong><a href="namex_0.1.0_all.deb">namex</a></strong></td>
+    <td><code>0.1.0</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Utilitario para gerenciar API publica de pacotes Python (utilizado pelo Keras 3)</td>
+</tr><tr>
+    <td><strong><a href="numpy_2.4.4_aarch64.deb">numpy</a></strong></td>
+    <td><code>2.4.4</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Versao estavel e testada do NumPy (2.4.4) compativel com Pandas, PyTorch e Keras no Termux</td>
+</tr><tr>
+    <td><strong><a href="opencv-python_5.1.0_aarch64.deb">opencv-python</a></strong></td>
+    <td><code>5.1.0</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Python bindings for OpenCV (Preservado e testado no Termux AI Wheels)</td>
+</tr><tr>
+    <td><strong><a href="opencv_5.1.0_aarch64.deb">opencv</a></strong></td>
+    <td><code>5.1.0</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Open Source Computer Vision Library (Preservado e testado no Termux AI Wheels)</td>
+</tr><tr>
+    <td><strong><a href="openpyxl_3.1.5_all.deb">openpyxl</a></strong></td>
+    <td><code>3.1.5</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Leitor e escritor de planilhas Excel (xlsx/xlsm) para Python no Termux</td>
+</tr><tr>
+    <td><strong><a href="optree_0.20.0_aarch64.deb">optree</a></strong></td>
+    <td><code>0.20.0</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Optimized PyTree library for Termux</td>
+</tr><tr>
+    <td><strong><a href="packaging_26.3_all.deb">packaging</a></strong></td>
+    <td><code>26.3</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Core utilities for Python packages</td>
+</tr><tr>
+    <td><strong><a href="pandas_3.0.5_aarch64.deb">pandas</a></strong></td>
+    <td><code>3.0.5</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Estruturas de dados de alta performance e analise de dados em Python para Termux</td>
+</tr><tr>
+    <td><strong><a href="pyparsing_3.3.3_all.deb">pyparsing</a></strong></td>
+    <td><code>3.3.3</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Python parsing module</td>
+</tr><tr>
+    <td><strong><a href="python-contourpy_1.4.0-1_aarch64.deb">python-contourpy</a></strong></td>
+    <td><code>1.4.0-1</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Python library for calculating contours in 2D quadrilateral grids (Preservado e testado no Termux AI Wheels)</td>
+</tr><tr>
+    <td><strong><a href="python-dateutil_2.9.0_all.deb">python-dateutil</a></strong></td>
+    <td><code>2.9.0</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Extensions to the standard Python datetime module</td>
+</tr><tr>
+    <td><strong><a href="python-kiwisolver_1.5.1_aarch64.deb">python-kiwisolver</a></strong></td>
+    <td><code>1.5.1</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>An efficient C++ implementation of the Cassowary constraint solving algorithm (Preservado e testado no Termux AI Wheels)</td>
+</tr><tr>
+    <td><strong><a href="python-openai-whisper_20250625_all.deb">python-openai-whisper</a></strong></td>
+    <td><code>20250625-1</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Robust Speech Recognition via Large-Scale Weak Supervision for Termux</td>
+</tr><tr>
+    <td><strong><a href="python-pillow_13.0.0_aarch64.deb">python-pillow</a></strong></td>
+    <td><code>13.0.0</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Python Imaging Library (Preservado e testado no Termux AI Wheels)</td>
+</tr><tr>
+    <td><strong><a href="python-psutil_7.2.2-2_aarch64.deb">python-psutil</a></strong></td>
+    <td><code>7.2.2-2</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Cross-platform process and system utilities module for Python (Preservado e testado no Termux AI Wheels)</td>
+</tr><tr>
+    <td><strong><a href="python-scipy_1_1.18.0-1_aarch64.deb">python-scipy</a></strong></td>
+    <td><code>1:1.18.0-1</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Fundamental algorithms for scientific computing in Python (Preservado e testado no Termux AI Wheels)</td>
+</tr><tr>
+    <td><strong><a href="python-tqdm_4.70.1_all.deb">python-tqdm</a></strong></td>
+    <td><code>4.70.1-1</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Fast, extensible progress bar for Python and CLI</td>
+</tr><tr>
+    <td><strong><a href="requests_2.32.4_all.deb">requests</a></strong></td>
+    <td><code>2.32.4</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Python HTTP for Humans</td>
+</tr><tr>
+    <td><strong><a href="scikit-learn_1.6.1_aarch64.deb">scikit-learn</a></strong></td>
+    <td><code>1.6.1</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Machine Learning in Python for Termux (OpenMP Clang native)</td>
+</tr><tr>
+    <td><strong><a href="seaborn_0.13.2_all.deb">seaborn</a></strong></td>
+    <td><code>0.13.2</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Visualizacao estatistica de dados baseada em matplotlib para Termux</td>
+</tr><tr>
+    <td><strong><a href="threadpoolctl_3.8.0_all.deb">threadpoolctl</a></strong></td>
+    <td><code>3.8.0</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Controle de pool de threads para bibliotecas nativas no Termux</td>
+</tr><tr>
+    <td><strong><a href="torch_2.11.0_aarch64.deb">torch</a></strong></td>
+    <td><code>2.11.0</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>PyTorch deep learning framework (Termux ARM64 patched with patchelf)</td>
+</tr><tr>
+    <td><strong><a href="torchaudio_2.11.0_aarch64.deb">torchaudio</a></strong></td>
+    <td><code>2.11.0</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Manipulacao, processamento e modelos de audio para PyTorch no Termux</td>
+</tr><tr>
+    <td><strong><a href="torchvision_0.26.0_aarch64.deb">torchvision</a></strong></td>
+    <td><code>0.26.0</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>Modelos de visao computacional, transformacoes e operadores C++ nativos para PyTorch no Termux</td>
+</tr><tr>
+    <td><strong><a href="ultralytics_8.4.202_all.deb">ultralytics</a></strong></td>
+    <td><code>8.4.202</code></td>
+    <td><span class="badge">all</span></td>
+    <td>Ultralytics YOLO (v8/v11) para deteccao, segmentacao e classificacao no Termux</td>
+</tr><tr>
+    <td><strong><a href="urllib3_2.5.0_all.deb">urllib3</a></strong></td>
+    <td><code>2.5.0</code></td>
+    <td><span class="badge">all</span></td>
+    <td>HTTP library with thread-safe connection pooling</td>
+</tr><tr>
+    <td><strong><a href="whisper-cpp_1.9.5-1_aarch64.deb">whisper-cpp</a></strong></td>
+    <td><code>1.9.5-1</code></td>
+    <td><span class="badge">aarch64</span></td>
+    <td>High-performance C/C++ implementation of OpenAI's Whisper speech-to-text with ARM NEON acceleration for Termux</td>
+</tr>
+        </tbody>
     </table>
-  </div>
-
-  <div class="card">
-    <h2>🛡️ Garantias Técnicas de Estabilidade</h2>
-    <ul>
-      <li>✓ <strong>Sem Gambiarras ou Symlinks:</strong> Os binários ELF do PyTorch foram corrigidos na tabela <code>DT_NEEDED</code> com <code>patchelf</code> para apontar para a <code>libabsl_base_cpu_detect.so</code> oficial do Termux.</li>
-      <li>✓ <strong>Compilação Nativa Clang / OpenMP:</strong> Scikit-Learn compilado com a toolchain padrão LLVM do Android com suporte a threads paralelas OpenMP.</li>
-      <li>✓ <strong>Resolução Automática:</strong> O comando <code>pkg install keras</code> puxa todas as dependências nativas automaticamente sem intervenção manual.</li>
-    </ul>
-  </div>
-
-  <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-top: 30px;">
-    Mantido por <a href="https://github.com/W3skerSec" target="_blank">W3skerSec</a> &bull; Código-fonte em <a href="https://github.com/W3skerSec/termux-ai-wheels" target="_blank">GitHub</a>
-  </p>
 </body>
 </html>

@@ -170,6 +170,7 @@ Section: python
 Priority: optional
 Homepage: https://numpy.org/
 Description: Versao estavel e testada do NumPy (2.4.4) compativel com Pandas, PyTorch e Keras no Termux
+ Pacote preservado do NumPy 2.4.4 garantindo total compatibilidade ABI/C-API com a stack completa de IA (Pandas 3.0.5, PyTorch 2.11.0, SciPy e Scikit-Learn).
 Filename: numpy_2.4.4_aarch64.deb
 Size: 3479880
 MD5sum: cf94bd6564997cd880269dd9eec033f6
@@ -332,6 +333,22 @@ MD5sum: bb5314ee5dff9e301f324fd4493f0eff
 SHA1: 979465afe1cc73c4b6b70cb810f830f0cd340def
 SHA256: db621dad0ac7ec26af3adf1c3720508c86bf5258b9d12365b4f124fd370be533
 
+Package: python-openai-whisper
+Version: 20250625-1
+Architecture: all
+Maintainer: W3skerSec AI Team <termux-ai@w3skersec.dev>
+Installed-Size: 2200
+Depends: python, torch, torchaudio, python-tqdm, python-numpy
+Section: python
+Priority: optional
+Homepage: https://github.com/openai/whisper
+Description: Robust Speech Recognition via Large-Scale Weak Supervision for Termux
+Filename: python-openai-whisper_20250625_all.deb
+Size: 561000
+MD5sum: 09eeb4357cc6db1a877ae645f274a4f5
+SHA1: 97438370127998017b68891230f6d0e7791d706a
+SHA256: 8ddd0e7993be587b072680e180dd2b25fe6be4e86e02d8bd1ca4fd15ba68910c
+
 Package: python-pillow
 Version: 13.0.0
 Architecture: aarch64
@@ -376,6 +393,22 @@ Size: 16940312
 MD5sum: 6a5872f5d0ebb4821d8582c445f4921d
 SHA1: c77e578f6bf607834fe07bd8280238718baf9531
 SHA256: c7f89dce30f7160323639437b15593022e6203c6fd8424b205b6c3b44232ae18
+
+Package: python-tqdm
+Version: 4.70.1-1
+Architecture: all
+Maintainer: W3skerSec AI Team <termux-ai@w3skersec.dev>
+Installed-Size: 450
+Depends: python
+Section: python
+Priority: optional
+Homepage: https://github.com/tqdm/tqdm
+Description: Fast, extensible progress bar for Python and CLI
+Filename: python-tqdm_4.70.1_all.deb
+Size: 55700
+MD5sum: ac6d73011f3160659052d022d5b2939e
+SHA1: 8d9ae689866b739b05d5be0a4f0ecf4a0c39fbd0
+SHA256: f1c31ef8f6b5d70c234c120968bfac872ee0d4ce3f677f50630a99e07d1b46d9
 
 Package: requests
 Version: 2.32.4
@@ -468,6 +501,7 @@ Depends: python (>= 3.14), torch (>= 2.11.0), sox, ffmpeg
 Section: python
 Priority: optional
 Description: Manipulacao, processamento e modelos de audio para PyTorch no Termux
+ Processamento de sinais de audio, transformacoes (espectrogramas, MFCC), forced alignment, decodificadores e modelos neurais para voz/audio no ARM64.
 Filename: torchaudio_2.11.0_aarch64.deb
 Size: 479252
 MD5sum: 8f334af299fc22ccd903d3ef67a3d191
@@ -482,6 +516,7 @@ Depends: python (>= 3.14), torch (>= 2.11.0), libjpeg-turbo, libwebp, libpng
 Section: python
 Priority: optional
 Description: Modelos de visao computacional, transformacoes e operadores C++ nativos para PyTorch no Termux
+ Datasets, transformacoes de imagens, arquiteturas classicas (ResNet, ConvNeXt, ViT) e operadores C++ nativos (_C.so e image.so) compilados para ARM64.
 Filename: torchvision_0.26.0_aarch64.deb
 Size: 1097464
 MD5sum: 8128bea9927205a6b077efa712e648e4
@@ -497,6 +532,7 @@ Section: python
 Priority: optional
 Homepage: https://ultralytics.com
 Description: Ultralytics YOLO (v8/v11) para deteccao, segmentacao e classificacao no Termux
+ Framework completo Ultralytics YOLO adaptado e corrigido para Android/Termux ARM64, com suporte nativo a PyTorch 2.11.0 e OpenCV.
 Filename: ultralytics_8.4.202_all.deb
 Size: 1684156
 MD5sum: 3e4b8508d514aae4dc1800843c6cdfd4
@@ -517,3 +553,20 @@ Size: 199244
 MD5sum: 81a3e5586e8c5fdb74783b698128a116
 SHA1: 7bd49f568477751037b427440dd79c335510392f
 SHA256: fc6a5727f63fc3172c7b29cfea074f80a75c37180e51a50636e081eadc4ea88c
+
+Package: whisper-cpp
+Version: 1.9.5-1
+Architecture: aarch64
+Maintainer: W3skerSec AI Team <termux-ai@w3skersec.dev>
+Installed-Size: 95000
+Depends: libc++, libomp
+Section: utils
+Priority: optional
+Homepage: https://github.com/ggerganov/whisper.cpp
+Description: High-performance C/C++ implementation of OpenAI's Whisper speech-to-text with ARM NEON acceleration for Termux
+Filename: whisper-cpp_1.9.5-1_aarch64.deb
+Size: 73094352
+MD5sum: fac5ae6c2c81a6c5c3452674c5af2237
+SHA1: c96b48c8388f4f68d96e60fbe3cb5eeda01f1042
+SHA256: 188a3ebda507264c6d79bf58b05251bf904d70d1e1080f2e0c5cbd38248baf70
+
