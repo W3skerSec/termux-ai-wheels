@@ -12,6 +12,7 @@
 Cadeia completa e fechada de dependências pré-compiladas para **aarch64** · Imune a quebras de upstream · Plug & Play
 
 [![APT Ready](https://img.shields.io/badge/APT-Ready-brightgreen?style=flat-square&logo=debian)](https://github.com/W3skerSec/termux-ai-wheels)
+[![Whisper](https://img.shields.io/badge/Whisper-1.9.5-00A67E?style=flat-square&logo=openai)](https://github.com/ggerganov/whisper.cpp)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.11.0-EE4C2C?style=flat-square&logo=pytorch)](https://pytorch.org)
 [![Ultralytics YOLO](https://img.shields.io/badge/YOLO-v8%2Fv11-00FFFF?style=flat-square&logo=yolo)](https://ultralytics.com)
 [![OpenCV](https://img.shields.io/badge/OpenCV-5.1.0-5C3EE8?style=flat-square&logo=opencv)](https://opencv.org)
@@ -54,6 +55,13 @@ curl -sL https://raw.githubusercontent.com/W3skerSec/termux-ai-wheels/main/setup
 | 🔊 **TorchAudio** | `2.11.0` | `aarch64` | `pkg install torchaudio` | Sinais de áudio + C++ ops (`forced_align` e `RNNT`) |
 | 🎯 **Ultralytics YOLO** | `8.4.202` | `all` | `pkg install ultralytics` | YOLOv8/v11 patcheado para Android + CLI `yolo` |
 | 🧠 **Keras 3** | `3.15.1` | `all` | `pkg install keras` | Multi-backend operando nativamente sobre PyTorch |
+
+### 🗣️ Reconhecimento de Fala & Áudio Neural (Speech-to-Text)
+| Pacote | Versão | Arquitetura | Instalação | Finalidade Técnica |
+|:---|:---:|:---:|:---|:---|
+| 🎙️ **Whisper.cpp** | `1.9.5` | `aarch64` | `pkg install whisper-cpp` | Motor C++ de STT com aceleração **ARM NEON + DotProd** + CLI `whisper-cli` e `whisper-server` |
+| 🐍 **OpenAI Whisper** | `20250625` | `all` | `pkg install python-openai-whisper` | Bindings Python do Whisper com PyTorch |
+| ⏳ **tqdm** | `4.70.1` | `all` | `pkg install python-tqdm` | Barra de progresso para downloads e inferência de áudio |
 
 ### 🔬 Computação Científica & Visão Computacional
 | Pacote | Versão | Arquitetura | Instalação | Finalidade Técnica |
@@ -123,6 +131,7 @@ print(f"✓ OpenCV      : {cv2.__version__}")
 print(f"✓ NumPy       : {np.__version__}")
 print(f"✓ Pandas      : {pd.__version__}")
 print("✓ YOLO Model  : Pronto para inferência!")
+print("✓ Whisper STT : Motor ARM NEON 10x tempo real ativo!")
 ```
 
 ---
@@ -134,7 +143,7 @@ print("✓ YOLO Model  : Pronto para inferência!")
 │                   A Blindagem Termux AI Wheels                         │
 ├────────────────────────────────────────────────────────────────────────┤
 │ 1. Zero Pip Compiles      → Nenhum clang rodando na máquina do usuário │
-│ 2. Cadeia Auto-contida    → Todas as 28 dependências no mesmo repo     │
+│ 2. Cadeia Auto-contida    → Todas as 31 dependências no mesmo repo     │
 │ 3. SONAME & ABI Travadas  → NumPy 2.4.4 + PyTorch 2.11.0 imutáveis     │
 │ 4. Patches para Android   → Ultralytics roda sem erro de OS            │
 │ 5. Desinstalação Segura   → dpkg/apt gerencia o ciclo de vida limpo    │
