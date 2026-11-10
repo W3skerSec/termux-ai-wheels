@@ -61,6 +61,7 @@ pkg update
 | Pacote | Versão | Arch | Instalar | Notas |
 |:---|:---:|:---:|:---|:---|
 | 🔥 **PyTorch** | `2.11.0` | `aarch64` | `pkg install torch` | Binários com `patchelf` — zero symlinks frágeis |
+| 👁️ **TorchVision** | `0.26.0` | `aarch64` | `pkg install torchvision` | Modelos de visão + C++ ops (`_C.so` e `image.so`) |
 | 🧠 **Keras 3** | `3.15.1` | `all` | `pkg install keras` | Multi-backend, opera sobre PyTorch |
 | 🤖 **Scikit-Learn** | `1.6.1` | `aarch64` | `pkg install scikit-learn` | Compilado com Clang + OpenMP 5.1 nativo |
 | 🌳 **Optree** | `0.20.0` | `aarch64` | `pkg install optree` | Dep. do Keras 3, C++17 |
@@ -77,9 +78,14 @@ pkg update
 
 ## ⚡ Instalação por Caso de Uso
 
+### 👁️ Visão Computacional (TorchVision)
+```bash
+pkg install torch torchvision
+```
+
 ### 🧠 Stack Completo de Deep Learning
 ```bash
-pkg install keras scikit-learn pandas seaborn openpyxl
+pkg install keras torch torchvision scikit-learn pandas seaborn openpyxl
 ```
 
 ### 🔥 Só PyTorch
@@ -224,11 +230,11 @@ termux-ai-wheels/
 ## 🛣️ Roadmap
 
 - [x] PyTorch 2.11.0 (aarch64)
+- [x] **TorchVision 0.26.0** (aarch64 + C++ ops)
 - [x] Keras 3 + dependências
 - [x] Scikit-Learn 1.6.1
 - [x] Pandas 3.0.5
 - [x] Seaborn, OpenPyXL, Joblib
-- [ ] **TorchVision 0.26.0** *(em breve — build concluído)*
 - [ ] TorchAudio
 - [ ] ONNX Runtime (ARM64)
 - [ ] LLaMA.cpp Python bindings
