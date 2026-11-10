@@ -50,6 +50,7 @@ echo -e "  ═══════════════════════
 echo ""
 echo -e "  Instale os pacotes disponíveis:"
 echo ""
+echo -e "    ${CYAN}pkg install numpy${RESET}             → NumPy 2.4.4 (Golden ABI)"
 echo -e "    ${CYAN}pkg install torch${RESET}             → PyTorch 2.11.0"
 echo -e "    ${CYAN}pkg install torchvision${RESET}       → TorchVision 0.26.0 (C++ ops)"
 echo -e "    ${CYAN}pkg install torchaudio${RESET}        → TorchAudio 2.11.0 (C++ ops)"
