@@ -83,6 +83,24 @@ MD5sum: d6c33468bf31d69403cd2e9b7ee32aff
 SHA1: e3c15f6edcb7b0b587e9e87ad97d445c4970a937
 SHA256: e684a39acdd02e459e28344f53ed93488cce7cbe383d221c9e8404489d4576b4
 
+Package: numpy
+Version: 2.4.4
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: libc++, libopenblas, python
+Provides: python-numpy (= 2.4.4), numpy (= 2.4.4)
+Replaces: python-numpy
+Conflicts: python-numpy (>> 2.4.4)
+Section: python
+Priority: optional
+Homepage: https://numpy.org/
+Description: Versao estavel e testada do NumPy (2.4.4) compativel com Pandas, PyTorch e Keras no Termux
+Filename: numpy_2.4.4_aarch64.deb
+Size: 3479880
+MD5sum: cf94bd6564997cd880269dd9eec033f6
+SHA1: a33ebd45a2a74d5b327c6a638134ca4a25e2c466
+SHA256: 727c913362e97c026ae339be92ac5176801aa9f97bf43e521e79e8a3b06a98af
+
 Package: openpyxl
 Version: 3.1.5
 Architecture: all
