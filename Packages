@@ -1,3 +1,37 @@
+Package: absl-py
+Version: 2.5.1
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 300
+Depends: python
+Provides: python-absl-py
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Biblioteca Python de suporte do Google (utilizada pelo Keras 3)
+Filename: absl-py_2.5.1_all.deb
+Size: 173408
+MD5sum: 3db31070724e1af5f6f1ce747b967076
+SHA1: 2e4073a9d6bba049fe8487c097ce984d0af17fe3
+SHA256: 16838eb1b11063680979733d4225ed32e594b380d2c7bc853816a749c1de6586
+
+Package: joblib
+Version: 1.6.0
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 1200
+Depends: python
+Provides: python-joblib
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Paralelismo leve e cache de funcoes Python para Termux
+Filename: joblib_1.6.0_all.deb
+Size: 348720
+MD5sum: db9029c73ae025f37bf9ad515792e9eb
+SHA1: e657bacb4e568c2eb4be6f99a0c7adab756b91b2
+SHA256: cc364c1f1433370900149759a401ed97185a7374cae29e155737d9bcbc5c9f54
+
 Package: keras
 Version: 3.15.1
 Architecture: all
@@ -8,7 +42,7 @@ Provides: python-keras, keras3
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: Framework de Deep Learning multi-backend (com backend PyTorch para Termux)
+Description: Multi-backend Deep Learning Framework (Torch backend for Termux)
 Filename: keras_3.15.1_all.deb
 Size: 2495864
 MD5sum: 78eab91421862cfd46d44fa5ef7b3fc2
@@ -25,12 +59,46 @@ Provides: python-ml-dtypes
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: Implementacao independente de tipos numericos para Machine Learning no Termux
+Description: Stand-alone implementation of machine learning types for Termux
 Filename: ml-dtypes_0.6.0_aarch64.deb
 Size: 184500
 MD5sum: c39725308faf0f8b098064dd741f37cb
 SHA1: fbfe935853bd4157f1d28f063dfc57f77054b16f
 SHA256: ce56388a457d2cb2dfc8469b713c266c74c23cea2de0f7c60a4623df95781780
+
+Package: namex
+Version: 0.1.0
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 50
+Depends: python
+Provides: python-namex
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Utilitario para gerenciar API publica de pacotes Python (utilizado pelo Keras 3)
+Filename: namex_0.1.0_all.deb
+Size: 10788
+MD5sum: d6c33468bf31d69403cd2e9b7ee32aff
+SHA1: e3c15f6edcb7b0b587e9e87ad97d445c4970a937
+SHA256: e684a39acdd02e459e28344f53ed93488cce7cbe383d221c9e8404489d4576b4
+
+Package: openpyxl
+Version: 3.1.5
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 3400
+Depends: python
+Provides: python-openpyxl
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Leitor e escritor de planilhas Excel (xlsx/xlsm) para Python no Termux
+Filename: openpyxl_3.1.5_all.deb
+Size: 433044
+MD5sum: 3cc9547970399bd29e091edbc6427f00
+SHA1: 79505c8edcd385cc571b30719d7d974292935fc2
+SHA256: 38b80d74a72a1b892217211c1ffbc6cb18af5c7e1d214585c24795389ef95433
 
 Package: optree
 Version: 0.20.0
@@ -42,12 +110,29 @@ Provides: python-optree
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: Biblioteca PyTree de alta performance para Keras no Termux
+Description: Optimized PyTree library for Termux
 Filename: optree_0.20.0_aarch64.deb
 Size: 707640
 MD5sum: d524ec0f601e6464c4b51eb45bd83024
 SHA1: 698598904c52088fb2de8b50d7576a96a5eed823
 SHA256: 041d1aca7bb791b2b87b8e98eae4c72823d5c7f6bb199a1a0c2912611e5e8dbd
+
+Package: pandas
+Version: 3.0.5
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 86016
+Depends: python, libc++, python-numpy
+Provides: python-pandas
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Estruturas de dados de alta performance e analise de dados em Python para Termux
+Filename: pandas_3.0.5_aarch64.deb
+Size: 13779512
+MD5sum: 5dea713fc59196e4abb542cf681534dd
+SHA1: 641f13a3b795594fc3ae1fbda502f6057ce67d5b
+SHA256: f55d942cc3d5fa77f6811c52a7430734214882281c2c37e4ca188bc12002cdd3
 
 Package: scikit-learn
 Version: 1.6.1
@@ -59,12 +144,46 @@ Provides: python-scikit-learn, sklearn, python-sklearn
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: Ferramentas de Machine Learning em Python compiladas nativamente com OpenMP via Clang para Termux
+Description: Machine Learning in Python for Termux (OpenMP Clang native)
 Filename: scikit-learn_1.6.1_aarch64.deb
 Size: 8205240
 MD5sum: b894f1c4aa2ad033ac567e902d7f1296
 SHA1: f99388504e36a20e17363f266b44f98bf24bf132
 SHA256: 2c8cd593473e2a15c6c7c14567b86f6db49f4184bf66d0cb0dd3b6c391aae1fa
+
+Package: seaborn
+Version: 0.13.2
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 2048
+Depends: python, python-numpy, pandas, matplotlib
+Provides: python-seaborn
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Visualizacao estatistica de dados baseada em matplotlib para Termux
+Filename: seaborn_0.13.2_all.deb
+Size: 489040
+MD5sum: 01921601955b31dc12eebdf9ab652bd8
+SHA1: 610d922c14ab570cfcab3a2ade8350766ea973dc
+SHA256: dffe98aef20ae3b951bd8ce52e18e5a313f80417d1b27b524acbbc34e61ace2b
+
+Package: threadpoolctl
+Version: 3.8.0
+Architecture: all
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Installed-Size: 80
+Depends: python
+Provides: python-threadpoolctl
+Section: science
+Priority: optional
+Homepage: https://github.com/W3skerSec/termux-ai-wheels
+Description: Controle de pool de threads para bibliotecas nativas no Termux
+Filename: threadpoolctl_3.8.0_all.deb
+Size: 28728
+MD5sum: cf2e95a71f09f8d87c2199a8b437bccd
+SHA1: 9229dd02f8ad85746977e67c55967d9059d7c05a
+SHA256: 7f1c19ec50f5b2225c5432d785ad9b3145f8582294c971e8c84696023402b9f6
 
 Package: torch
 Version: 2.11.0
@@ -76,7 +195,7 @@ Provides: python-torch, pytorch, python-pytorch
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: Framework de Deep Learning PyTorch (corrigido nativamente via patchelf com libabsl_base_cpu_detect)
+Description: PyTorch deep learning framework (Termux ARM64 patched with patchelf)
 Filename: torch_2.11.0_aarch64.deb
 Size: 47467260
 MD5sum: 6d54320bf02178f1bcdcd9152553a46a
