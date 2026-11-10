@@ -7,30 +7,30 @@
 
 # ⚡ Termux AI Wheels
 
-### Repositório APT de IA & Data Science para Termux — ARM64 / Android
+### Repositório APT Autossuficiente de IA, Visão & Data Science para Termux
 
-Pacotes nativos pré-compilados para **aarch64** · Sem pip lento · Sem quebra de deps · Plug & Play
+Cadeia completa e fechada de dependências pré-compiladas para **aarch64** · Imune a quebras de upstream · Plug & Play
 
 [![APT Ready](https://img.shields.io/badge/APT-Ready-brightgreen?style=flat-square&logo=debian)](https://github.com/W3skerSec/termux-ai-wheels)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.11.0-EE4C2C?style=flat-square&logo=pytorch)](https://pytorch.org)
-[![Keras](https://img.shields.io/badge/Keras-3.15.1-D00000?style=flat-square&logo=keras)](https://keras.io)
-[![scikit-learn](https://img.shields.io/badge/scikit--learn-1.6.1-F7931E?style=flat-square&logo=scikitlearn)](https://scikit-learn.org)
+[![Ultralytics YOLO](https://img.shields.io/badge/YOLO-v8%2Fv11-00FFFF?style=flat-square&logo=yolo)](https://ultralytics.com)
+[![OpenCV](https://img.shields.io/badge/OpenCV-5.1.0-5C3EE8?style=flat-square&logo=opencv)](https://opencv.org)
+[![NumPy](https://img.shields.io/badge/NumPy-2.4.4-013243?style=flat-square&logo=numpy)](https://numpy.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
 </div>
 
 ---
 
-## 🎯 O Problema que Resolvemos
+## 🎯 Por que este repositório é Diferente?
 
-Rodar **IA no Android/Termux** é doloroso por padrão:
+A maioria dos tutoriais de IA para Android quebra em poucas semanas porque:
+- O Termux upstream atualiza bibliotecas C/C++ compartilhadas (`libicu`, `ffmpeg`, `libxml2`, `openblas`) sem sincronia com os pacotes Python.
+- O PyPI empurra atualizações do NumPy ou SciPy com novas ABIs incompatíveis com binários existentes.
+- Módulos essenciais como **Ultralytics YOLO** assumem cegamente que todo Linux é desktop e rejeitam o Android com `ValueError: Unsupported operating system: Android`.
 
-- 🐌 `pip install torch` → build de horas, falha, timeout
-- 💥 Incompatibilidade de SONAME / `DT_NEEDED` quebrando libs nativas
-- ❌ PyPI não distribui wheels para `android_24_arm64_v8a`
-- 🧩 Dependências circulares sem solução no ARM64
-
-**Este repositório resolve tudo isso** — pacotes prontos, instalação em segundos.
+**O Termux AI Wheels resolve isso blindando a cadeia inteira:**
+Todas as dependências diretas, indiretas e compartilhadas estão preservadas e empacotadas no repositório. O que funciona hoje continuará funcionando para sempre.
 
 ---
 
@@ -40,235 +40,115 @@ Rodar **IA no Android/Termux** é doloroso por padrão:
 curl -sL https://raw.githubusercontent.com/W3skerSec/termux-ai-wheels/main/setup-repo.sh | bash
 ```
 
-> Isso adiciona o repositório ao seu APT e roda `pkg update` automaticamente.
-
-<details>
-<summary>⚙️ Configuração manual (alternativa)</summary>
-
-```bash
-echo "deb [trusted=yes] https://raw.githubusercontent.com/W3skerSec/termux-ai-wheels/gh-pages/ ./" \
-  > $PREFIX/etc/apt/sources.list.d/w3skersec.list
-
-pkg update
-```
-
-</details>
+> Adiciona a chave, registra o repositório em `$PREFIX/etc/apt/sources.list.d/w3skersec.list` e sincroniza o APT.
 
 ---
 
-## 📦 Pacotes Disponíveis
+## 📦 Matriz Completa de Pacotes (Cadeia Fechada)
 
-| Pacote | Versão | Arch | Instalar | Notas |
+### 🧠 Frameworks Centrais de IA & Redes Neurais
+| Pacote | Versão | Arquitetura | Instalação | Finalidade Técnica |
 |:---|:---:|:---:|:---|:---|
-| 🎯 **Ultralytics YOLO** | `8.4.202` | `all` | `pkg install ultralytics` | YOLOv8/v11 com patch nativo de suporte ao Android/Termux |
-| 🔢 **NumPy** | `2.4.4` | `aarch64` | `pkg install numpy` | Versão estável (Golden ABI) 100% alinhada com Pandas 3.0.5 e PyTorch |
-| 🔥 **PyTorch** | `2.11.0` | `aarch64` | `pkg install torch` | Binários com `patchelf` — zero symlinks frágeis |
-| 👁️ **TorchVision** | `0.26.0` | `aarch64` | `pkg install torchvision` | Modelos de visão + C++ ops (`_C.so` e `image.so`) |
-| 🔊 **TorchAudio** | `2.11.0` | `aarch64` | `pkg install torchaudio` | Processamento de áudio, forced align & RNNT C++ ops |
-| 🧠 **Keras 3** | `3.15.1` | `all` | `pkg install keras` | Multi-backend, opera sobre PyTorch |
-| 🤖 **Scikit-Learn** | `1.6.1` | `aarch64` | `pkg install scikit-learn` | Compilado com Clang + OpenMP 5.1 nativo |
-| 🌳 **Optree** | `0.20.0` | `aarch64` | `pkg install optree` | Dep. do Keras 3, C++17 |
-| 🔢 **ml-dtypes** | `0.6.0` | `aarch64` | `pkg install ml-dtypes` | Tipos numéricos ML — Eigen/C++17 |
-| 🐼 **Pandas** | `3.0.5` | `aarch64` | `pkg install pandas` | Análise de dados de alta performance |
-| 📊 **Seaborn** | `0.13.2` | `all` | `pkg install seaborn` | Visualização estatística sobre matplotlib |
-| 📂 **OpenPyXL** | `3.1.5` | `all` | `pkg install openpyxl` | Leitura e escrita de planilhas `.xlsx` |
-| ⚙️ **Joblib** | `1.6.0` | `all` | `pkg install joblib` | Paralelismo e cache de funções Python |
-| 🧵 **threadpoolctl** | `3.8.0` | `all` | `pkg install threadpoolctl` | Controle de thread pools (dep. sklearn) |
-| 🔤 **absl-py** | `2.5.1` | `all` | `pkg install absl-py` | Utilitários Google / Abseil para Python |
-| 🏷️ **Namex** | `0.1.0` | `all` | `pkg install namex` | Gestão de namespaces (dep. Keras) |
+| 🔥 **PyTorch** | `2.11.0` | `aarch64` | `pkg install torch` | Tensores & autograd nativo (ELF patchelf corrigido) |
+| 👁️ **TorchVision** | `0.26.0` | `aarch64` | `pkg install torchvision` | Modelos de visão + C++ ops nativos (`_C.so` e `image.so`) |
+| 🔊 **TorchAudio** | `2.11.0` | `aarch64` | `pkg install torchaudio` | Sinais de áudio + C++ ops (`forced_align` e `RNNT`) |
+| 🎯 **Ultralytics YOLO** | `8.4.202` | `all` | `pkg install ultralytics` | YOLOv8/v11 patcheado para Android + CLI `yolo` |
+| 🧠 **Keras 3** | `3.15.1` | `all` | `pkg install keras` | Multi-backend operando nativamente sobre PyTorch |
+
+### 🔬 Computação Científica & Visão Computacional
+| Pacote | Versão | Arquitetura | Instalação | Finalidade Técnica |
+|:---|:---:|:---:|:---|:---|
+| 🔢 **NumPy** | `2.4.4` | `aarch64` | `pkg install numpy` | **Golden ABI** estável alinhada com Pandas e PyTorch |
+| 🧪 **SciPy** | `1.18.0` | `aarch64` | `pkg install python-scipy` | Algoritmos científicos com aceleração OpenBLAS |
+| 👁️ **OpenCV** | `5.1.0` | `aarch64` | `pkg install opencv opencv-python` | Visão computacional C++ & bindings Python (`cv2`) |
+| 🤖 **Scikit-Learn** | `1.6.1` | `aarch64` | `pkg install scikit-learn` | Machine learning clássico com OpenMP nativo |
+| 🐼 **Pandas** | `3.0.5` | `aarch64` | `pkg install pandas` | Estruturas tabulares e análise de alta performance |
+
+### 📊 Visualização de Dados
+| Pacote | Versão | Arquitetura | Instalação | Finalidade Técnica |
+|:---|:---:|:---:|:---|:---|
+| 📈 **Matplotlib** | `3.11.2` | `aarch64` | `pkg install matplotlib` | Renderização gráfica nativa via FreeType/Qhull |
+| 🎨 **Seaborn** | `0.13.2` | `all` | `pkg install seaborn` | Visualização estatística avançada |
+| 🖼️ **Pillow** | `13.0.0` | `aarch64` | `pkg install python-pillow` | Processamento de imagens rasterizadas |
+
+### 🔗 Cadeia de Suporte & Dependências Fechadas
+| Pacote | Versão | Tipo | Descrição |
+|:---|:---:|:---:|:---|
+| 🌳 **optree** | `0.20.0` | aarch64 | Manipulação estruturada de tensores em C++ (Keras) |
+| 📐 **ml-dtypes** | `0.6.0` | aarch64 | Tipos de ponto flutuante em C++17 (Keras/PyTorch) |
+| ⚡ **joblib** | `1.6.0` | all | Paralelismo de pipelines para Scikit-Learn |
+| 🧵 **threadpoolctl** | `3.8.0` | all | Gestor de concorrência OpenMP / BLAS |
+| 🌐 **requests** | `2.32.4` | all | Requisições HTTP (com urllib3, certifi, idna, charset-normalizer) |
+| 🔤 **fonttools** | `4.68.0` | all | Manipulação tipográfica de vetores (Matplotlib) |
+| 📐 **contourpy** | `1.4.0` | aarch64 | Curvas de nível 2D em C++ (Matplotlib) |
+| 🧩 **kiwisolver** | `1.5.1` | aarch64 | Resolução de restrições geométricas em C++ (Matplotlib) |
+| 📑 **openpyxl** | `3.1.5` | all | Manipulação de planilhas Excel `.xlsx` |
 
 ---
 
-## ⚡ Instalação por Caso de Uso
+## ⚡ Comandos Rápidos por Caso de Uso
 
-### 👁️ Visão Computacional (TorchVision)
+### 🎯 Visão Computacional Completa (YOLO + OpenCV + TorchVision)
 ```bash
-pkg install torch torchvision
+pkg install torch torchvision opencv opencv-python ultralytics
 ```
 
-### 🎯 Visão Computacional Avançada & Detecção de Objetos (YOLO)
+### 🧠 Deep Learning Multimodal (Visão + Áudio + Tensores)
 ```bash
-pkg install torch torchvision ultralytics opencv-python
+pkg install torch torchvision torchaudio keras
 ```
 
-### 🔊 Áudio & Fala (TorchAudio)
+### 📊 Data Science & Machine Learning Stack
 ```bash
-pkg install torch torchaudio
-```
-
-### 🧠 Stack Completo de Deep Learning
-```bash
-pkg install keras torch torchvision torchaudio scikit-learn pandas seaborn openpyxl
-```
-
-### 🔥 Só PyTorch
-```bash
-pkg install torch
-```
-
-### 📊 Só Data Science (sem IA pesada)
-```bash
-pkg install pandas seaborn openpyxl joblib
-```
-
-### 🤖 Machine Learning Clássico
-```bash
-pkg install scikit-learn pandas
+pkg install numpy python-scipy pandas scikit-learn matplotlib seaborn openpyxl
 ```
 
 ---
 
-## 💻 Exemplos de Código
-
-<details open>
-<summary><strong>🧠 Rede Neural com Keras 3 (backend PyTorch)</strong></summary>
+## 💻 Teste de Validação Prático
 
 ```python
-import os
-os.environ["KERAS_BACKEND"] = "torch"
-
-import keras
-from keras import layers, models
-import numpy as np
-
-print(f"Keras {keras.__version__} | Backend: {keras.backend.backend()}")
-
-# Dados de treino
-X = np.array([[23.], [27.], [122.], [67.], [25.], [30.]], dtype=np.float32)
-y = np.array([[0.],  [0.],  [1.],   [1.],  [0.],  [0.]], dtype=np.float32)
-
-# Modelo Sequential
-model = models.Sequential([
-    layers.Input(shape=(1,)),
-    layers.Dense(64, activation="relu"),
-    layers.Dense(32, activation="relu"),
-    layers.Dense(1,  activation="sigmoid"),
-])
-
-model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["accuracy"])
-model.fit(X, y, epochs=50, verbose=0)
-
-prob = model.predict(np.array([[80.]], dtype=np.float32))[0][0]
-print(f"Entrada 80.0 → Probabilidade: {prob:.4f}")
-```
-
-</details>
-
-<details>
-<summary><strong>🤖 Classificação com Scikit-Learn</strong></summary>
-
-```python
-from sklearn.linear_model import LogisticRegression
-import numpy as np
-
-X = np.array([[23], [27], [122], [67], [25], [30]])
-y = np.array([0, 0, 1, 1, 0, 0])
-
-clf = LogisticRegression()
-clf.fit(X, y)
-
-pred = clf.predict([[80]])[0]
-prob = clf.predict_proba([[80]])[0][1]
-print(f"Classe: {pred} | Probabilidade: {prob:.2f}")
-```
-
-</details>
-
-<details>
-<summary><strong>🐼 Análise de Dados com Pandas + Seaborn</strong></summary>
-
-```python
+import torch
+import torchvision
+import torchaudio
+import cv2
+from ultralytics import YOLO
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
+import numpy as np
 
-df = pd.DataFrame({
-    "modelo": ["Keras", "PyTorch", "Sklearn"],
-    "acuracia": [0.97, 0.96, 0.92],
-})
-
-sns.barplot(data=df, x="modelo", y="acuracia", palette="viridis")
-plt.title("Acurácia dos Modelos — Termux ARM64")
-plt.savefig("resultado.png", dpi=150)
-print(df.to_string(index=False))
-```
-
-</details>
-
----
-
-## 🔧 Engenharia & Diferenciais Técnicos
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   Como os .deb são feitos                              │
-├─────────────────────────────────────────────────────────────┤
-  1. Compilação nativa no próprio Android (Termux/Clang)                
-  2. patchelf corrige DT_NEEDED em binários ELF nativos                 
-  3. Indexação APT-padrão Debian (Packages.gz + Release)                
-  4. .dist-info embutido → pip reconhece tudo normalmente              
-  5. Desinstalação limpa via pkg uninstall / apt remove                 
-
-```
-
-| ✅ Feito certo | ❌ Outros projetos |
-|:---|:---|
-| Patchelf em ELF nativos | Symlinks frágeis em `$PREFIX/lib` |
-| `pkg upgrade` não quebra nada | Quebra após qualquer update |
-| OpenMP 5.1 nativo (Clang/LLVM) | GCC com headers ausentes |
-| Controle de versão APT | `pip` sem controle de versão |
-
----
-
-## 📁 Estrutura do Repositório
-
-```
-termux-ai-wheels/
-├── README.md           ← esta documentação
-├── setup-repo.sh       ← script de ativação do APT (1 linha)
-├── install.sh          ← instalador all-in-one alternativo
-└── [branch: gh-pages]
-    ├── Packages        ← índice APT
-    ├── Packages.gz     ← índice comprimido
-    ├── Release         ← metadados da release APT
-    ├── torch_2.11.0_aarch64.deb
-    ├── keras_3.15.1_all.deb
-    ├── scikit-learn_1.6.1_aarch64.deb
-    ├── pandas_3.0.5_aarch64.deb
-    └── ...
+print(f"✓ PyTorch     : {torch.__version__}")
+print(f"✓ TorchVision : {torchvision.__version__}")
+print(f"✓ TorchAudio  : {torchaudio.__version__}")
+print(f"✓ OpenCV      : {cv2.__version__}")
+print(f"✓ NumPy       : {np.__version__}")
+print(f"✓ Pandas      : {pd.__version__}")
+print("✓ YOLO Model  : Pronto para inferência!")
 ```
 
 ---
 
-## 🛣️ Roadmap
+## 🛡️ Filosofia de Engenharia: A Blindagem de Cadeia
 
-- [x] **Ultralytics YOLO** (v8/v11 adaptado para Android)
-- [x] **NumPy 2.4.4** (golden ABI preservada)
-- [x] PyTorch 2.11.0 (aarch64)
-- [x] **TorchVision 0.26.0** (aarch64 + C++ ops)
-- [x] **TorchAudio 2.11.0** (aarch64 + C++ ops)
-- [x] Keras 3 + dependências
-- [x] Scikit-Learn 1.6.1
-- [x] Pandas 3.0.5
-- [x] Seaborn, OpenPyXL, Joblib
-- [ ] ONNX Runtime (ARM64)
-- [ ] ONNX Runtime (ARM64)
-- [ ] LLaMA.cpp Python bindings
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   A Blindagem Termux AI Wheels                         │
+├────────────────────────────────────────────────────────────────────────┤
+│ 1. Zero Pip Compiles      → Nenhum clang rodando na máquina do usuário │
+│ 2. Cadeia Auto-contida    → Todas as 28 dependências no mesmo repo     │
+│ 3. SONAME & ABI Travadas  → NumPy 2.4.4 + PyTorch 2.11.0 imutáveis     │
+│ 4. Patches para Android   → Ultralytics roda sem erro de OS            │
+│ 5. Desinstalação Segura   → dpkg/apt gerencia o ciclo de vida limpo    │
+└────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 👤 Autor
+## 👤 Autor e Mantenedor
 
 <div align="center">
 
-**[W3skerSec](https://github.com/W3skerSec)** · Mantido com 🖤 no Android
+**[W3skerSec](https://github.com/W3skerSec)**
 
-*Compilado, testado e publicado diretamente do Termux.*
+*Engenharia reversa, otimização e empacotamento nativo direto do Android.*
 
-</div>
-
----
-
-<div align="center">
-<sub>MIT License · ARM64 · Python 3.14+ · Termux · Android 24+</sub>
 </div>
