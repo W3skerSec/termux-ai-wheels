@@ -8,7 +8,7 @@ Provides: python-keras, keras3
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: Multi-backend Deep Learning Framework (Torch backend for Termux)
+Description: Framework de Deep Learning multi-backend (com backend PyTorch para Termux)
 Filename: keras_3.15.1_all.deb
 Size: 2495864
 MD5sum: 78eab91421862cfd46d44fa5ef7b3fc2
@@ -25,7 +25,7 @@ Provides: python-ml-dtypes
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: Stand-alone implementation of machine learning types for Termux
+Description: Implementacao independente de tipos numericos para Machine Learning no Termux
 Filename: ml-dtypes_0.6.0_aarch64.deb
 Size: 184500
 MD5sum: c39725308faf0f8b098064dd741f37cb
@@ -42,7 +42,7 @@ Provides: python-optree
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: Optimized PyTree library for Termux
+Description: Biblioteca PyTree de alta performance para Keras no Termux
 Filename: optree_0.20.0_aarch64.deb
 Size: 707640
 MD5sum: d524ec0f601e6464c4b51eb45bd83024
@@ -59,7 +59,7 @@ Provides: python-scikit-learn, sklearn, python-sklearn
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: Machine Learning in Python for Termux (OpenMP Clang native)
+Description: Ferramentas de Machine Learning em Python compiladas nativamente com OpenMP via Clang para Termux
 Filename: scikit-learn_1.6.1_aarch64.deb
 Size: 8205240
 MD5sum: b894f1c4aa2ad033ac567e902d7f1296
@@ -76,7 +76,7 @@ Provides: python-torch, pytorch, python-pytorch
 Section: science
 Priority: optional
 Homepage: https://github.com/W3skerSec/termux-ai-wheels
-Description: PyTorch deep learning framework (Termux ARM64 patched with patchelf)
+Description: Framework de Deep Learning PyTorch (corrigido nativamente via patchelf com libabsl_base_cpu_detect)
 Filename: torch_2.11.0_aarch64.deb
 Size: 47467260
 MD5sum: 6d54320bf02178f1bcdcd9152553a46a
