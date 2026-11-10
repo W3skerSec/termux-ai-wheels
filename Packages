@@ -201,3 +201,17 @@ Size: 47467260
 MD5sum: 6d54320bf02178f1bcdcd9152553a46a
 SHA1: ac9f4f6e871731b39881a120c209269959d4a605
 SHA256: 4a32e8ecedd77cbf574d06e5d71f8a923d53c548f76901b0bdfb10df59f48c51
+
+Package: torchvision
+Version: 0.26.0
+Architecture: aarch64
+Maintainer: W3skerSec <https://github.com/W3skerSec>
+Depends: python (>= 3.14), torch (>= 2.11.0), libjpeg-turbo, libwebp, libpng
+Section: python
+Priority: optional
+Description: Modelos de visao computacional, transformacoes e operadores C++ nativos para PyTorch no Termux
+Filename: torchvision_0.26.0_aarch64.deb
+Size: 1097464
+MD5sum: 8128bea9927205a6b077efa712e648e4
+SHA1: c0e335a6bad109f683306215e14a3a811d67574c
+SHA256: 55e801df86f934d46979252a84067496a0e5a4e70aa3fb777c193be65332f7f4
